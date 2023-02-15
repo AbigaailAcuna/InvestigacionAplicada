@@ -1,0 +1,22 @@
+<productos>
+  <producto>
+    <nombre>Camiseta</nombre>
+    <descripcion>Una camisa de 100% algodón</descripcion>
+    <precio>$20</precio>
+    <imagen>product1.jpg</imagen>
+  </producto>
+  <producto>
+    <nombre>Jeans</nombre>
+    <descripcion>Stylish and durable jeans with a classic design</descripcion>
+    <precio>$35</precio>
+    <imagen>product2.jpg</imagen>
+  </producto>
+  <producto>
+    <nombre>Sneakers</nombre>
+    <descripcion>Lightweight and comfortable sneakers with a modern design</descripcion>
+    <precio>$50</precio>
+    <imagen>product3.jpg</imagen>
+  </producto>
+  
+  
+</productos>

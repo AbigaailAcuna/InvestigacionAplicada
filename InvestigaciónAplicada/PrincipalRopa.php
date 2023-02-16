@@ -50,7 +50,7 @@
       
  </form>
  
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="d-grid gap-2 col-6 mx-auto;" style="text-align: center;">
         <button class="btn btn-dark" type="submit" name="submit" value="Enviar" class="submit">Cotizar</button>
         </div>
      

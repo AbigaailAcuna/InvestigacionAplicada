@@ -26,35 +26,29 @@
   {
     
   ?>
-  <section>
+
     <article>
-      <div class="container">
         <form action="cotizacion.php" method="post">
-        <div class="lista">
-          <div class="producto">  
-          <input type="checkbox" name="product[]" value="1">
-          <img src= <?php echo $pro->imagen;?> class="product-image">
-          <div class="nombre-producto">
-          <?php echo $pro->nombre;?>
-          </div>
-          <div class="precio-producto">
-          <?php echo $pro->precio;?>
-          </div>
-        </div>
+          <div class="lista">
+            <div class="producto">  
+            <input type="checkbox" name="proSele[]" value=<?php echo $pro->id;?>>
+            <img src= <?php echo $pro->imagen;?> class="product-image">
+            <div class="nombre-producto">
+           <?php echo $pro->nombre;?>
+           </div>
+           <div class="precio-producto">
+           <?php echo $pro->precio;?>
+           </div>
+         </div>
         <?php
          
         }
         ?>
          </div>
-         
-      
- </form>
- 
-        <div class="d-grid gap-2 col-6 mx-auto;" style="text-align: center;">
-        <button class="btn btn-dark" type="submit" name="submit" value="Enviar" class="submit">Cotizar</button>
-        </div>
-     
-    </article>
-  </section>       
+         <div class="boton">
+        <input type="submit" value="Cotizar">
+       </div> 
+      </form>   
+    </article>   
 </body>
 </html>

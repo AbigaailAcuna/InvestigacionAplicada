@@ -1,33 +1,9 @@
-<?php 
-if(isset($_POST["submit"])){
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $to = $email;
-    $subject = "Cotización ropa";
-    $quote = "";
-    if(isset($_POST["product"])){
-        $products = $_POST["product"];
-        foreach($products as $product){
-            $quote .= $product . "\n";
-        }
-    }
-    $message = "Estimado " . $name . ",\n\nAqui está su cotización:\n\n" . $quote . "\n\nAgradecemos tu preferencia.\n\nSaludos,\nTienda de ropa.";
-    $headers = "From: no-reply@clothingstore.com";
-    if(!empty($name) && !empty($email) && !empty($quote)){
-        mail($to, $subject, $message, $headers);
-        header("Location: quote-sent.php");
-        exit();
-    } else {
-        header("Location: form-error.php");
-        exit();
-    }
-}
-?>
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Cotización ropa</title>
     <style type="text/css">
+        
         .form-container{
             width: 500px;
             margin: 100px auto;
@@ -63,14 +39,34 @@ if(isset($_POST["submit"])){
     </style>
 </head>
 <body>
+    <?php
+    $xml = simplexml_load_file('productos.xml');
+    if (isset($_POST['proSele'])) {
+        $proSele=array();
+            foreach ($_POST['proSele'] as $valor) {
+                $proSele[] = $valor;
+                
+            }
+          
+            print_r($proSele);
+            var_dump($proSele);
+            
+            
+        }
+    
+        else {
+                  
+          }
+        
+    ?>
     <div class="form-container">
         <h1>Obten tu cotización</h1>
-        <form action="submit-quote.php" method="post">
-            <label for="name">Nombre:</label><br>
-            <input type="text" name="name" placeholder="Tu nombre" required><br>
-            <label for="email">Correo:</label><br>
-            <input type="email" name="email" placeholder="Tu correo" required><br>
-            <input type="submit" name="submit" value="Send">
+        <form action="envia.php" method="post">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" placeholder="Nombre" required><br>
+            <label for="correo">Correo:</label><br>
+            <input type="email" name="correo" placeholder="Correo" required><br>
+            <input type="submit" name="submit" name="submit" value="Enviar" class="submit" >
         </form>
     </div>
 </body>
